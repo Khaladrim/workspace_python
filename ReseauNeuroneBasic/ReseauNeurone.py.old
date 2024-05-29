@@ -6,6 +6,9 @@ import torch.optim as SGD
 import matplotlib.pyplot as plt
 import seaborn as sns
    
+# Fixer les graines pour la reproductibilité
+seed = 42
+torch.manual_seed(seed)
 
 # Class d'entrainement du réseau de neurones
 class BasicRN_train(nn.Module):
@@ -52,7 +55,7 @@ class BasicRN_train(nn.Module):
 def train(model, input, labels):
     # Création d'un objet optimiseur pour utiliser la descente de gradient stochastique
     #lr donne le pas. Si pas assez grand, l'entrainement sera lent. Si trop grand, on peut ne pas converger
-    optimizer = SGD.SGD(model.parameters(), lr=0.1)
+    optimizer = SGD.SGD(model.parameters(), lr=0.01)
     print("Biais final avant entrainement: " + str(model.b00) + "\n")
     # Nombre d'epoch (combien de fois on passe sur l'ensemble des données d'entrainement)
     num_epoch = 100
@@ -101,8 +104,6 @@ train(model_train, input, labels)
 print("##################################")
 # Utilisation du modèle
 output_values = model_train(input_doses)
-
-
 
 #Plot des valeurs de sortie
 sns.set_theme(style='whitegrid')
