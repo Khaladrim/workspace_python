@@ -13,7 +13,7 @@ b2 = torch.randn(27)
 parameters = [C, W1, b1, W2, b2]
 
 # Charger les paramètres du modèle
-parameters = torch.load('char_rnn_model.pth')
+parameters = torch.load('MakeMore/char_rnn_model_Revisited.pth')
 
 # Fixer les graines pour la reproductibilité
 seed = 2147483647
