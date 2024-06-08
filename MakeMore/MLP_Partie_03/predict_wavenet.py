@@ -185,7 +185,7 @@ if __name__ == "__main__":
         Linear(n_hidden, vocab_size),
     ])
     # Charger le modèle
-    checkpoints = torch.load('MakeMore/char_wawenet.pth')
+    checkpoints = torch.load('MakeMore/MLP_Partie_03/char_wawenet.pth')
     parameters = model.parameters()
     for param, saved_param in zip(parameters, checkpoints):
         param.data = saved_param.data

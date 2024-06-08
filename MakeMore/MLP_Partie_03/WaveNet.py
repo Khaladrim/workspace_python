@@ -273,4 +273,4 @@ for _ in range(20):
     #print(''.join(itos[i] for i in out)) # decode and print the generated word
 
 # Sauvegarde du modèle
-torch.save(parameters, 'MakeMore/char_wawenet.pth')
+torch.save(parameters, 'MakeMore/MLP_Partie_03/char_wawenet.pth')
